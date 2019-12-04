@@ -10,23 +10,72 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item 1-->
+        <!--View Controller-->
         <scene sceneID="KvH-31-zCM">
             <objects>
                 <viewController id="rX9-qf-Z2u" customClass="ViewController" customModule="ThomasGrantFinalProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vah-dE-dk8">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Or choose from library" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a6M-eg-0vb">
+                                <rect key="frame" x="87.666666666666686" y="353" width="239" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XMb-e9-QO9">
+                                <rect key="frame" x="138.66666666666666" y="186" width="136.99999999999997" height="137"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="137" id="8Tw-sd-hzz"/>
+                                    <constraint firstAttribute="height" constant="137" id="IQu-HR-SJ1"/>
+                                </constraints>
+                                <state key="normal" image="Camera"/>
+                                <connections>
+                                    <action selector="cameraButtonPressed:" destination="rX9-qf-Z2u" eventType="touchUpInside" id="Wok-8z-hNz"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1ao-8U-WKc">
+                                <rect key="frame" x="138.66666666666666" y="391" width="136.99999999999997" height="137"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="137" id="2pu-6R-aDf"/>
+                                    <constraint firstAttribute="width" constant="137" id="5Zb-mw-lgF"/>
+                                </constraints>
+                                <state key="normal" image="Library"/>
+                                <connections>
+                                    <action selector="libraryButtonPressed:" destination="rX9-qf-Z2u" eventType="touchUpInside" id="0rq-Zy-2Eg"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Take a photo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4iA-oT-Hqt">
+                                <rect key="frame" x="138" y="148" width="137" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="KnW-zC-IH8" firstAttribute="trailing" secondItem="4iA-oT-Hqt" secondAttribute="trailing" constant="139" id="4hD-3a-ODq"/>
+                            <constraint firstItem="a6M-eg-0vb" firstAttribute="centerY" secondItem="vah-dE-dk8" secondAttribute="centerY" id="9pZ-Og-D48"/>
+                            <constraint firstItem="4iA-oT-Hqt" firstAttribute="leading" secondItem="KnW-zC-IH8" secondAttribute="leading" constant="138" id="L4R-T6-kkd"/>
+                            <constraint firstItem="a6M-eg-0vb" firstAttribute="centerX" secondItem="vah-dE-dk8" secondAttribute="centerX" id="XlC-MW-j9o"/>
+                            <constraint firstItem="1ao-8U-WKc" firstAttribute="top" secondItem="a6M-eg-0vb" secondAttribute="bottom" constant="8" id="fQ8-gK-kTQ"/>
+                            <constraint firstItem="XMb-e9-QO9" firstAttribute="centerX" secondItem="vah-dE-dk8" secondAttribute="centerX" id="fzx-aj-uic"/>
+                            <constraint firstItem="1ao-8U-WKc" firstAttribute="centerX" secondItem="vah-dE-dk8" secondAttribute="centerX" id="mlm-Iw-VNj"/>
+                            <constraint firstItem="XMb-e9-QO9" firstAttribute="top" secondItem="4iA-oT-Hqt" secondAttribute="bottom" constant="8" id="qDu-Bp-YNE"/>
+                            <constraint firstItem="a6M-eg-0vb" firstAttribute="top" secondItem="XMb-e9-QO9" secondAttribute="bottom" constant="30" id="qOs-J2-foM"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="KnW-zC-IH8"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="VwM-ae-Ryt"/>
+                    <tabBarItem key="tabBarItem" title="" image="cicon" id="VwM-ae-Ryt">
+                        <inset key="largeContentSizeImageInsets" minX="0.0" minY="1" maxX="0.0" maxY="1"/>
+                    </tabBarItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v2k-gl-wUB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-96" y="-513"/>
+            <point key="canvasLocation" x="-97.101449275362327" y="-513.58695652173913"/>
         </scene>
-        <!--Item-->
+        <!--Table View Controller-->
         <scene sceneID="mjZ-r6-dGY">
             <objects>
                 <tableViewController id="ep1-v4-WfM" customClass="TableViewController" customModule="ThomasGrantFinalProject" customModuleProvider="target" sceneMemberID="viewController">
@@ -49,7 +98,7 @@
                             <outlet property="delegate" destination="ep1-v4-WfM" id="Yjc-KQ-BeB"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Item" id="c1w-U3-Ns6"/>
+                    <tabBarItem key="tabBarItem" title="" image="time" id="c1w-U3-Ns6"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LaP-3Z-HRD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -74,4 +123,10 @@
             <point key="canvasLocation" x="-1015" y="-184"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Camera" width="172" height="172"/>
+        <image name="Library" width="100" height="100"/>
+        <image name="cicon" width="25" height="25"/>
+        <image name="time" width="25" height="23"/>
+    </resources>
 </document>

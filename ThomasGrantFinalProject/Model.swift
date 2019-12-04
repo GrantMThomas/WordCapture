@@ -15,12 +15,6 @@ class Model {
     
     var items = [imageText]()
     
-    
-    func textFromImage(image: UIImage, callback: @escaping (_ result: String)->()){
-        
-        
-    }
-    
     //Function to extract text from an image, also adds to imageText array
     //Makes call to api
     func readText(image: UIImage, callback: @escaping (_ result: String)->()){
@@ -55,6 +49,7 @@ class Model {
                             if let finalString = result[0]["ParsedText"] as? String{
                                 //Successful reading, callback here
                                 print("FINAL STRING: " + finalString)
+                                //Save image, get address string
                                 self.items.append(imageText(finalString, image))
                             }
                         }
