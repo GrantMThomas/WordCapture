@@ -8,59 +8,33 @@
 
 import Foundation
 import UIKit
+import GoogleMobileVision
 
 class Model {
     
     public static let shared = Model()
-    
     var items = [imageText]()
     
     //Function to extract text from an image, also adds to imageText array
-    //Makes call to api
-    func readText(image: UIImage, callback: @escaping (_ result: String)->()){
-        //Resize the image
-        let i1 = resizeImage(image: image, newWidth: 400)!
-        //Set up the URL request
-        var request = URLRequest(url: URL(string: "https://api.ocr.space/parse/image")!)
-        let imageData = i1.pngData()!
-        //Encode image
-        let base64Image = imageData.base64EncodedString(options: [])
-        request.httpMethod = "POST"
-        let line = ("data:image/jpg;base64," + base64Image).addingPercentEncoding(withAllowedCharacters: .alphanumerics)!
-        let postString = "apikey=" + Credentials.APIKEY + "&base64Image=" + line
-        request.httpBody = postString.data(using: String.Encoding.utf8)
+    func imageToText(image: UIImage)->String{
+        var result = ""
         
-        //Set up URL session
-        let session = URLSession.shared
-        session.dataTask(with: request) { (data, response, error) in
-            if let response = response{
-                print(response)
-            }
-            if let data = data {
-                print(data)
-                do{
-                    let json = try JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.allowFragments)
-                    print(json)
-                    if let dictionary = json as? [String:Any]{
-                        print("First")
-                        if let result = dictionary["ParsedResults"] as? [[String:Any]]{
-                            
-                            print("Second")
-                            if let finalString = result[0]["ParsedText"] as? String{
-                                //Successful reading, callback here
-                                print("FINAL STRING: " + finalString)
-                                //Save image, get address string
-                                self.items.append(imageText(finalString, image))
-                            }
-                        }
-                    }
-                }
-                catch{
-                    print(error)
+        let textDetector = GMVDetector(ofType: GMVDetectorTypeText, options: nil)
+        let features:[GMVTextBlockFeature] = (textDetector?.features(in: image, options: nil)!)! as! [GMVTextBlockFeature]
+        
+        for element in features {
+            for line in element.lines{
+                for text in line.elements{
+                    result += text.value
+                    result += " "
                 }
             }
-            }.resume()
+        }
+        items.append(imageText(result, image))
+        return result
     }
+    
+    
     
     //This function wasn't invented by me, I used it for a previous project
     func resizeImage(image: UIImage, newWidth: CGFloat) -> UIImage? {
