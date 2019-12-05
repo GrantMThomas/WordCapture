@@ -11,14 +11,17 @@ import UIKit
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     let model = Model.shared
+    var ip:UIImagePickerController!
     
+    @IBOutlet weak var cameraButton: UIButton!
+    @IBOutlet weak var photoButton: UIButton!
     
     @IBAction func cameraButtonPressed(_ sender: Any) {
         
         //Make sure source type is avalable (Mainly so it doesn't crash in simulator)
         if UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.camera){
             //Set up the image picker
-            let ip = UIImagePickerController()
+            ip = UIImagePickerController()
             ip.delegate = self
             ip.allowsEditing = true
             ip.mediaTypes = ["public.image"]
@@ -34,7 +37,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBAction func libraryButtonPressed(_ sender: Any) {
         if UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.photoLibrary){
             //Set up the image picker
-            let ip = UIImagePickerController()
+            ip = UIImagePickerController()
             ip.delegate = self
             ip.allowsEditing = true
             ip.mediaTypes = ["public.image"]
@@ -48,7 +51,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
     }
     
     
@@ -60,9 +63,15 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage{
-            print(model.imageToText(image: image))
+        if let image = info[UIImagePickerController.InfoKey.editedImage] as? UIImage{
+            let p = ImageProcess()
+            p.imageToText(image: image, callback: printResult)
+            //print(p.imageToText(image: image))
+            ip.dismiss(animated: true, completion: nil)
         }
+    }
+    func printResult(_ input: String){
+        print(input)
     }
 
 
