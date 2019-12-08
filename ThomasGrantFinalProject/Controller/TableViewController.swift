@@ -76,6 +76,8 @@ class TableViewController: UITableViewController {
         let sb = UIStoryboard(name: "Main", bundle: nil)
         let textView = sb.instantiateViewController(withIdentifier: "TextView") as! TextViewController
         textView.text = model.getImageText(at: indexPath.row)?.text ?? "NA"
+        textView.index = indexPath.row
+        textView.modalPresentationStyle = .fullScreen
         self.present(textView, animated: true, completion: nil)
         
     }

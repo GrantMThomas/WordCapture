@@ -11,6 +11,8 @@ import UIKit
 class TextViewController: UIViewController, UITextViewDelegate {
     
     var text:String = "NA"
+    var index:Int = 0
+    let model = Model.shared
     
     @IBOutlet weak var textView: UITextView!
     
@@ -58,6 +60,9 @@ class TextViewController: UIViewController, UITextViewDelegate {
             textView.text = viewString
             textView.resignFirstResponder()
         }
+        //Update the text
+        model.editText(at: index, newText: textView.text)
+        
     }
     
 

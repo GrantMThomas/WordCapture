@@ -53,6 +53,23 @@ class ImageProcess{
         UIGraphicsEndImageContext()
         return newImage
     }
+    
+    //Set image key
+    func placeImage(key: String, image: UIImage){
+        
+    }
+    
+    //Retrieve image from local storage
+    func getImage(key: String)->UIImage{
+        
+        return UIImage(named: "unknown")!
+    }
+    
+    //Remove image from local storage
+    func removeImage(key: String){
+        
+    }
+    
 }
 
 
