@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		40089CE92398F48900DF3476 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 40089CE82398F48900DF3476 /* GoogleService-Info.plist */; };
+		40089CEB239CA33600DF3476 /* TextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40089CEA239CA33600DF3476 /* TextViewController.swift */; };
 		40353F662398E35B00454BAB /* ImageProcess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40353F652398E35B00454BAB /* ImageProcess.swift */; };
 		40D58D8923946AC100F29599 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40D58D8823946AC100F29599 /* AppDelegate.swift */; };
 		40D58D8B23946AC100F29599 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40D58D8A23946AC100F29599 /* ViewController.swift */; };
@@ -46,6 +47,7 @@
 /* Begin PBXFileReference section */
 		2C5C00D63CD5443ED948F08A /* Pods-ThomasGrantFinalProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ThomasGrantFinalProject.release.xcconfig"; path = "Target Support Files/Pods-ThomasGrantFinalProject/Pods-ThomasGrantFinalProject.release.xcconfig"; sourceTree = "<group>"; };
 		40089CE82398F48900DF3476 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		40089CEA239CA33600DF3476 /* TextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewController.swift; sourceTree = "<group>"; };
 		40353F652398E35B00454BAB /* ImageProcess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageProcess.swift; sourceTree = "<group>"; };
 		40D58D8523946AC100F29599 /* ThomasGrantFinalProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ThomasGrantFinalProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		40D58D8823946AC100F29599 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 			children = (
 				40D58D8A23946AC100F29599 /* ViewController.swift */,
 				40D58DBF23947A7200F29599 /* TableViewController.swift */,
+				40089CEA239CA33600DF3476 /* TextViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -373,6 +376,7 @@
 				40D58D8B23946AC100F29599 /* ViewController.swift in Sources */,
 				40D58DCA2397674B00F29599 /* Credentials.swift in Sources */,
 				40D58D8923946AC100F29599 /* AppDelegate.swift in Sources */,
+				40089CEB239CA33600DF3476 /* TextViewController.swift in Sources */,
 				40D58DC023947A7200F29599 /* TableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

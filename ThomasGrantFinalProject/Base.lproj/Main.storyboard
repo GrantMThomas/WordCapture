@@ -106,6 +106,95 @@
             </objects>
             <point key="canvasLocation" x="-67" y="166"/>
         </scene>
+        <!--Text View Controller-->
+        <scene sceneID="2WQ-mm-4i1">
+            <objects>
+                <viewController storyboardIdentifier="TextView" id="Yqv-ZW-4kJ" customClass="TextViewController" customModule="ThomasGrantFinalProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tWs-1z-xFT">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eG6-ZO-SYr">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                <items>
+                                    <navigationItem title="Edit and Share" id="jAr-sh-qDb">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="done" id="m16-cz-Mlt">
+                                            <connections>
+                                                <action selector="backButtonPressed:" destination="Yqv-ZW-4kJ" id="fWT-Rx-ASo"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7pk-2q-eaQ">
+                                <rect key="frame" x="0.0" y="692" width="414" height="44"/>
+                                <items>
+                                    <barButtonItem systemItem="action" id="bqF-kU-P5I">
+                                        <inset key="imageInsets" minX="0.0" minY="0.0" maxX="5" maxY="0.0"/>
+                                        <connections>
+                                            <action selector="sharePressed:" destination="Yqv-ZW-4kJ" id="aPA-T2-kio"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem systemItem="add" id="Tey-b0-u97">
+                                        <inset key="imageInsets" minX="5" minY="0.0" maxX="5" maxY="0.0"/>
+                                        <connections>
+                                            <action selector="addButtonPressed:" destination="Yqv-ZW-4kJ" id="DQC-xx-UZK"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem image="subtract" id="ySX-mN-YUA" userLabel="Sub">
+                                        <inset key="imageInsets" minX="5" minY="0.0" maxX="5" maxY="0.0"/>
+                                        <connections>
+                                            <action selector="subtractButtonPressed:" destination="Yqv-ZW-4kJ" id="I20-JH-rvI"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Dpy-54-SNV">
+                                <rect key="frame" x="20" y="64" width="374" height="608"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Text">
+                                        <attributes>
+                                            <color key="NSColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <font key="NSFont" metaFont="system" size="14"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="7pk-2q-eaQ" firstAttribute="top" secondItem="Dpy-54-SNV" secondAttribute="bottom" constant="20" id="3wU-O4-LXq"/>
+                            <constraint firstItem="Dpy-54-SNV" firstAttribute="leading" secondItem="4bS-f7-4Fm" secondAttribute="leading" constant="20" id="7BV-qB-bth"/>
+                            <constraint firstItem="4bS-f7-4Fm" firstAttribute="trailing" secondItem="Dpy-54-SNV" secondAttribute="trailing" constant="20" id="8VU-gG-Ujj"/>
+                            <constraint firstItem="7pk-2q-eaQ" firstAttribute="trailing" secondItem="4bS-f7-4Fm" secondAttribute="trailing" id="JLe-gP-adK"/>
+                            <constraint firstItem="7pk-2q-eaQ" firstAttribute="bottom" secondItem="4bS-f7-4Fm" secondAttribute="bottom" id="ROd-EQ-aoA"/>
+                            <constraint firstItem="7pk-2q-eaQ" firstAttribute="leading" secondItem="4bS-f7-4Fm" secondAttribute="leading" id="UaE-cc-fsm"/>
+                            <constraint firstItem="Dpy-54-SNV" firstAttribute="top" secondItem="eG6-ZO-SYr" secondAttribute="bottom" constant="20" id="h69-1Z-WlN"/>
+                            <constraint firstItem="eG6-ZO-SYr" firstAttribute="leading" secondItem="4bS-f7-4Fm" secondAttribute="leading" id="ucq-Ng-liy"/>
+                            <constraint firstItem="eG6-ZO-SYr" firstAttribute="top" secondItem="4bS-f7-4Fm" secondAttribute="top" id="xpT-CU-vhM"/>
+                            <constraint firstItem="eG6-ZO-SYr" firstAttribute="trailing" secondItem="4bS-f7-4Fm" secondAttribute="trailing" id="zcq-DQ-tRl"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="4bS-f7-4Fm"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="eTf-Fw-aL7" appends="YES" id="A99-0j-Me5"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="textView" destination="Dpy-54-SNV" id="nab-W6-Gwp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XGY-iM-EFr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="eTf-Fw-aL7">
+                    <connections>
+                        <action selector="didTap:" destination="Yqv-ZW-4kJ" id="AT3-9f-hMT"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="873.91304347826099" y="164.67391304347828"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="szi-Cc-U7w">
             <objects>
@@ -129,6 +218,7 @@
         <image name="Camera" width="172" height="172"/>
         <image name="Library" width="100" height="100"/>
         <image name="cicon" width="25" height="25"/>
+        <image name="subtract" width="25" height="1.6666666269302368"/>
         <image name="time" width="25" height="23"/>
     </resources>
 </document>

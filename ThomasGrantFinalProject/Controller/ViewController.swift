@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import CropViewController
 
-class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, CropViewControllerDelegate {
     
     let model = Model.shared
     var ip:UIImagePickerController!
@@ -23,7 +24,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             //Set up the image picker
             ip = UIImagePickerController()
             ip.delegate = self
-            ip.allowsEditing = true
+            ip.allowsEditing = false
             ip.mediaTypes = ["public.image"]
             ip.sourceType = .camera
             present(ip, animated: true, completion: nil)
@@ -39,7 +40,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             //Set up the image picker
             ip = UIImagePickerController()
             ip.delegate = self
-            ip.allowsEditing = true
+            ip.allowsEditing = false
             ip.mediaTypes = ["public.image"]
             ip.sourceType = .photoLibrary
             present(ip, animated: true, completion: nil)
@@ -64,13 +65,23 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     //When the image is finished picking
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        if let image = info[UIImagePickerController.InfoKey.editedImage] as? UIImage{
-            let p = ImageProcess()
-            //Note the callback function
-            p.imageToText(image: image, callback: addToModel)
-            ip.dismiss(animated: true, completion: nil)
+        if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage{
+            picker.dismiss(animated: true, completion: nil)
+            let cropController = CropViewController(image: image)
+            cropController.delegate = self
+            present(cropController, animated: true, completion: nil)
+            
         }
     }
+    
+    func cropViewController(_ cropViewController: CropViewController, didCropToImage image: UIImage, withRect cropRect: CGRect, angle: Int) {
+        cropViewController.dismiss(animated: true, completion: nil)
+        let p = ImageProcess()
+        //Note the callback function
+        p.imageToText(image: image, callback: addToModel)
+        ip.dismiss(animated: true, completion: nil)
+    }
+    
     func printResult(_ input: String, _ image: UIImage){
         print(input)
     }

@@ -72,6 +72,14 @@ class TableViewController: UITableViewController {
         }    
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        let textView = sb.instantiateViewController(withIdentifier: "TextView") as! TextViewController
+        textView.text = model.getImageText(at: indexPath.row)?.text ?? "NA"
+        self.present(textView, animated: true, completion: nil)
+        
+    }
+    
 
     /*
     // Override to support rearranging the table view.
@@ -88,7 +96,7 @@ class TableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -96,6 +104,6 @@ class TableViewController: UITableViewController {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
     }
-    */
+    
 
 }
