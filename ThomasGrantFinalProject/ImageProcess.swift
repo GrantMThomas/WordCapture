@@ -16,7 +16,7 @@ class ImageProcess{
     
     let shared = Model.shared
     //Function to extract text from an image, also adds to imageText array
-    func imageToText(image: UIImage, callback: @escaping (_ result: String)->()){
+    func imageToText(image: UIImage, callback: @escaping (_ result: String, _ image: UIImage)->()){
         var re = ""
         let vision = Vision.vision()
         let textRecognizer = vision.onDeviceTextRecognizer()
@@ -26,6 +26,7 @@ class ImageProcess{
         
         textRecognizer.process(visionImage) { result, error in
           guard error == nil, let result = result else {
+            callback("No text available", image)
             return
           }
             for block in result.blocks {
@@ -37,7 +38,7 @@ class ImageProcess{
                     re += "\n"
                 }
             }
-            callback(re)
+            callback(re, image)
         }
     }
     

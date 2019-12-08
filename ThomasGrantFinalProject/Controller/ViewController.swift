@@ -62,17 +62,23 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         self.present(alert, animated: true, completion: nil)
     }
     
+    //When the image is finished picking
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let image = info[UIImagePickerController.InfoKey.editedImage] as? UIImage{
             let p = ImageProcess()
-            p.imageToText(image: image, callback: printResult)
-            //print(p.imageToText(image: image))
+            //Note the callback function
+            p.imageToText(image: image, callback: addToModel)
             ip.dismiss(animated: true, completion: nil)
         }
     }
-    func printResult(_ input: String){
+    func printResult(_ input: String, _ image: UIImage){
         print(input)
     }
+    
+    func addToModel(_ input: String, _ image: UIImage){
+        model.addImage(image: image, text: input)
+    }
+    
 
 
 }
