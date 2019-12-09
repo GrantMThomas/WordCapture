@@ -76,9 +76,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     func cropViewController(_ cropViewController: CropViewController, didCropToImage image: UIImage, withRect cropRect: CGRect, angle: Int) {
         cropViewController.dismiss(animated: true, completion: nil)
-        let p = ImageProcess()
         //Note the callback function
-        p.imageToText(image: image, callback: addToModel)
+        ImageProcess.imageToText(image: image, callback: addToModel)
         ip.dismiss(animated: true, completion: nil)
     }
     

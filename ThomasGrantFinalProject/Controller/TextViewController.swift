@@ -16,14 +16,13 @@ class TextViewController: UIViewController, UITextViewDelegate {
     
     @IBOutlet weak var textView: UITextView!
     
-    //Increase the font size
-    @IBAction func addButtonPressed(_ sender: Any) {
-        textView.font = UIFont(name: "System Font Regular", size: (textView.font?.pointSize ?? 30) + 2)
+    @IBOutlet weak var stepper: UIStepper!
+    
+    //Change font size based on value of stepper
+    @IBAction func stepperPressed(_ sender: Any) {
+        textView.font = UIFont(name: "System Font Regular", size: CGFloat(stepper.value))
     }
-    //Decrease the font size
-    @IBAction func subtractButtonPressed(_ sender: Any) {
-        textView.font = UIFont(name: "System Font Regular", size: (textView.font?.pointSize ?? 30) - 2)
-    }
+    
     
     
     @IBAction func sharePressed(_ sender: Any) {
@@ -47,6 +46,9 @@ class TextViewController: UIViewController, UITextViewDelegate {
         
         textView.text = text
         textView.delegate = self
+        
+        //Set default stepper value
+        stepper.value = Double(textView.font?.pointSize ?? 30)
         
         
     }

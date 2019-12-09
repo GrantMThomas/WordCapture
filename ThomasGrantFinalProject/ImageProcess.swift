@@ -16,7 +16,7 @@ class ImageProcess{
     
     let shared = Model.shared
     //Function to extract text from an image, also adds to imageText array
-    func imageToText(image: UIImage, callback: @escaping (_ result: String, _ image: UIImage)->()){
+    static func imageToText(image: UIImage, callback: @escaping (_ result: String, _ image: UIImage)->()){
         var re = ""
         let vision = Vision.vision()
         let textRecognizer = vision.onDeviceTextRecognizer()
@@ -43,7 +43,7 @@ class ImageProcess{
     }
     
     //This function wasn't invented by me, I used it for a previous project
-    func resizeImage(image: UIImage, newWidth: CGFloat) -> UIImage? {
+    static func resizeImage(image: UIImage, newWidth: CGFloat) -> UIImage? {
         let scale = newWidth / image.size.width
         let newHeight = image.size.height * scale
         UIGraphicsBeginImageContext(CGSize(width: newWidth, height: newHeight))
@@ -55,19 +55,26 @@ class ImageProcess{
     }
     
     //Set image key
-    func placeImage(key: String, image: UIImage){
+    static func placeImage(key: String, image: UIImage){
+        if let imageData = image.pngData(){
+            UserDefaults.standard.setValue(imageData, forKey: key)
+        }
         
     }
     
     //Retrieve image from local storage
-    func getImage(key: String)->UIImage{
+    static func getImage(key: String)->UIImage{
+        if let imageData = UserDefaults.standard.object(forKey: key) as? Data, let image = UIImage(data: imageData){
+            return image
+        }
         
+        //Somehow couldn't convert data, return default unknown image
         return UIImage(named: "unknown")!
     }
     
     //Remove image from local storage
-    func removeImage(key: String){
-        
+    static func removeImage(key: String){
+        UserDefaults.standard.removeObject(forKey: key)
     }
     
 }
