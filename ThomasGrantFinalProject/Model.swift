@@ -30,12 +30,13 @@ class Model {
                         let itemDict = dict as! [String:String]
 
                         let imageURL:String = itemDict["image"] ?? "nil"
-                        print("Key: " + imageURL)
                         let image = ImageProcess.getImage(key: imageURL)
                         let text:String = itemDict["text"] ?? "NA"
-
+                        let size:Double = Double(itemDict["fontSize"] ?? "20") ?? 20
+                        
                         //Appending the array without adding to the file system since already exists
-                        items.append(imageText(text, image, key: imageURL))
+                        items.append(imageText(text: text, image: image, key: imageURL, fontSize: size))
+                        //items.append(imageText(text, image, key: imageURL))
                     }
                 }
             }
@@ -79,12 +80,19 @@ class Model {
         }
     }
     
+    func setFontSize(at index: Int, size: Double){
+        if index >= 0 && index < items.count{
+            items[index].fontSize = size
+            save()
+        }
+    }
+    
     //Save to array, just saves key and text
     private func save(){
         var itemsArray = [[String:String]]()
         
         for iT in items {
-            let dict = ["image" : iT.key, "text" : iT.text]
+            let dict = ["image" : iT.key, "text" : iT.text, "fontSize": String(iT.fontSize)]
             itemsArray.append(dict)
         }
         (itemsArray as NSArray).write(toFile: filepath, atomically: true)
@@ -100,9 +108,19 @@ struct imageText{
     var text: String
     var image: UIImage
     var key: String
+    
+    var fontSize:Double = 20
+    
     init(_ text: String, _ image: UIImage, key: String){
         self.text = text
         self.image = image
         self.key = key
+    }
+    
+    init(text: String, image: UIImage, key: String, fontSize: Double){
+        self.text = text
+        self.image = image
+        self.key = key
+        self.fontSize = fontSize
     }
 }

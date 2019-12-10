@@ -12,6 +12,10 @@ class TextViewController: UIViewController, UITextViewDelegate {
     
     var text:String = "NA"
     var index:Int = 0
+    
+    var fontType:String = "System Font Regular"
+    
+    
     let model = Model.shared
     
     @IBOutlet weak var textView: UITextView!
@@ -20,11 +24,15 @@ class TextViewController: UIViewController, UITextViewDelegate {
     
     //Change font size based on value of stepper
     @IBAction func stepperPressed(_ sender: Any) {
-        textView.font = UIFont(name: "System Font Regular", size: CGFloat(stepper.value))
+        //Change font to stepper value
+        textView.font = UIFont(name: fontType, size: CGFloat(stepper.value))
+        
+        //Save in model as well
+        model.setFontSize(at: index, size: stepper.value)
     }
     
     
-    
+    //Activity controller to share, copy, etc.
     @IBAction func sharePressed(_ sender: Any) {
         let words = [textView.text ?? "NA"]
         let activityViewController = UIActivityViewController(activityItems: words as [String], applicationActivities: nil)
@@ -36,7 +44,7 @@ class TextViewController: UIViewController, UITextViewDelegate {
         self.dismiss(animated: true, completion: nil)
     }
     
-    
+    //To dismiss keyboard
     @IBAction func didTap(_ sender: Any) {
         textView.resignFirstResponder()
     }
@@ -48,7 +56,10 @@ class TextViewController: UIViewController, UITextViewDelegate {
         textView.delegate = self
         
         //Set default stepper value
-        stepper.value = Double(textView.font?.pointSize ?? 30)
+        stepper.value = model.getImageText(at: index)?.fontSize ?? 20
+        
+        //Set font size
+        textView.font = UIFont(name: fontType, size: CGFloat(stepper.value))
         
         
     }
