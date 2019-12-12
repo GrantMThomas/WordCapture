@@ -50,6 +50,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         }
     }
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -70,10 +72,10 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             let cropController = CropViewController(image: image)
             cropController.delegate = self
             present(cropController, animated: true, completion: nil)
-            
         }
     }
     
+    //Allow the image to be cropped
     func cropViewController(_ cropViewController: CropViewController, didCropToImage image: UIImage, withRect cropRect: CGRect, angle: Int) {
         cropViewController.dismiss(animated: true, completion: nil)
         //Note the callback function
@@ -81,10 +83,12 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         ip.dismiss(animated: true, completion: nil)
     }
     
+    //Placeholder callback for debugging
     func printResult(_ input: String, _ image: UIImage){
         print(input)
     }
     
+    //Actual callback that is used 
     func addToModel(_ input: String, _ image: UIImage){
         model.addImage(image: image, text: input)
     }

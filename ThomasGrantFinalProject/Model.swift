@@ -33,9 +33,10 @@ class Model {
                         let image = ImageProcess.getImage(key: imageURL)
                         let text:String = itemDict["text"] ?? "NA"
                         let size:Double = Double(itemDict["fontSize"] ?? "20") ?? 20
+                        let font:String = itemDict["fontType"] ?? "System Font Regular"
                         
                         //Appending the array without adding to the file system since already exists
-                        items.append(imageText(text: text, image: image, key: imageURL, fontSize: size))
+                        items.append(imageText(text: text, image: image, key: imageURL, fontSize: size, fontType: font))
                         //items.append(imageText(text, image, key: imageURL))
                     }
                 }
@@ -87,12 +88,19 @@ class Model {
         }
     }
     
+    func setFontType(at index: Int, font: String){
+        if index >= 0 && index < items.count{
+            items[index].fontType = font
+            save()
+        }
+    }
+    
     //Save to array, just saves key and text
     private func save(){
         var itemsArray = [[String:String]]()
         
         for iT in items {
-            let dict = ["image" : iT.key, "text" : iT.text, "fontSize": String(iT.fontSize)]
+            let dict = ["image" : iT.key, "text" : iT.text, "fontSize": String(iT.fontSize), "fontType": iT.fontType]
             itemsArray.append(dict)
         }
         (itemsArray as NSArray).write(toFile: filepath, atomically: true)
@@ -109,6 +117,7 @@ struct imageText{
     var image: UIImage
     var key: String
     
+    var fontType = "System Font Regular"
     var fontSize:Double = 20
     
     init(_ text: String, _ image: UIImage, key: String){
@@ -117,10 +126,11 @@ struct imageText{
         self.key = key
     }
     
-    init(text: String, image: UIImage, key: String, fontSize: Double){
+    init(text: String, image: UIImage, key: String, fontSize: Double, fontType: String){
         self.text = text
         self.image = image
         self.key = key
         self.fontSize = fontSize
+        self.fontType = fontType
     }
 }

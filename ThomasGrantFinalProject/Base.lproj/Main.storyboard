@@ -145,6 +145,11 @@
                                             </connections>
                                         </stepper>
                                     </barButtonItem>
+                                    <barButtonItem title="Aa" id="A7I-F4-eju">
+                                        <connections>
+                                            <action selector="fontButtonPressed:" destination="Yqv-ZW-4kJ" id="neL-Cg-lkh"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Dpy-54-SNV">
