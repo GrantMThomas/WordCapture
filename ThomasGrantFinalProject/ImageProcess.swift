@@ -4,7 +4,7 @@
 //
 //  Created by Grant Thomas on 12/4/19.
 //  Copyright © 2019 Grant Thomas. All rights reserved.
-//
+//  gmthomas@usc.edu
 
 import Foundation
 import UIKit

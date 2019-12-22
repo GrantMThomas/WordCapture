@@ -4,7 +4,7 @@
 //
 //  Created by Grant Thomas on 12/1/19.
 //  Copyright © 2019 Grant Thomas. All rights reserved.
-//
+//  gmthomas@usc.edu
 
 import UIKit
 
@@ -79,7 +79,6 @@ class TableViewController: UITableViewController {
         textView.index = indexPath.row
         textView.modalPresentationStyle = .fullScreen
         self.present(textView, animated: true, completion: nil)
-        
     }
     
 

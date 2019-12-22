@@ -4,7 +4,7 @@
 //
 //  Created by Grant Thomas on 12/7/19.
 //  Copyright © 2019 Grant Thomas. All rights reserved.
-//
+//  gmthomas@usc.edu
 
 import UIKit
 
@@ -132,6 +132,7 @@ class TextViewController: UIViewController, UITextViewDelegate, UIPickerViewData
         font = UIFont.familyNames[row]
     }
     
+    //To get the correct font
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
         var label = UILabel()
         if let v = view as? UILabel{

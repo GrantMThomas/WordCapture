@@ -4,7 +4,7 @@
 //
 //  Created by Grant Thomas on 12/1/19.
 //  Copyright © 2019 Grant Thomas. All rights reserved.
-//
+//  gmthomas@usc.edu
 
 import UIKit
 import CropViewController

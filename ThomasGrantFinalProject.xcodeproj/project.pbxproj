@@ -49,7 +49,7 @@
 		40089CE82398F48900DF3476 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		40089CEA239CA33600DF3476 /* TextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewController.swift; sourceTree = "<group>"; };
 		40353F652398E35B00454BAB /* ImageProcess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageProcess.swift; sourceTree = "<group>"; };
-		40D58D8523946AC100F29599 /* ThomasGrantFinalProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ThomasGrantFinalProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		40D58D8523946AC100F29599 /* Word Capture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Word Capture.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		40D58D8823946AC100F29599 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		40D58D8A23946AC100F29599 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		40D58D8D23946AC100F29599 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -110,7 +110,7 @@
 		40D58D8623946AC100F29599 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				40D58D8523946AC100F29599 /* ThomasGrantFinalProject.app */,
+				40D58D8523946AC100F29599 /* Word Capture.app */,
 				40D58D9923946AC200F29599 /* ThomasGrantFinalProjectTests.xctest */,
 				40D58DA423946AC200F29599 /* ThomasGrantFinalProjectUITests.xctest */,
 			);
@@ -214,7 +214,7 @@
 			);
 			name = ThomasGrantFinalProject;
 			productName = ThomasGrantFinalProject;
-			productReference = 40D58D8523946AC100F29599 /* ThomasGrantFinalProject.app */;
+			productReference = 40D58D8523946AC100F29599 /* Word Capture.app */;
 			productType = "com.apple.product-type.application";
 		};
 		40D58D9823946AC200F29599 /* ThomasGrantFinalProjectTests */ = {
@@ -565,7 +565,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = edu.usc.gmthomas.ThomasGrantFinalProject;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Word Capture";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -584,7 +584,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = edu.usc.gmthomas.ThomasGrantFinalProject;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Word Capture";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
