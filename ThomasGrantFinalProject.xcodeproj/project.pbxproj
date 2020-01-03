@@ -558,13 +558,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 27A96JG73L;
 				INFOPLIST_FILE = ThomasGrantFinalProject/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = edu.usc.gmthomas.ThomasGrantFinalProject;
+				PRODUCT_BUNDLE_IDENTIFIER = grant.WordCapture;
 				PRODUCT_NAME = "Word Capture";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -577,13 +578,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 27A96JG73L;
 				INFOPLIST_FILE = ThomasGrantFinalProject/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = edu.usc.gmthomas.ThomasGrantFinalProject;
+				PRODUCT_BUNDLE_IDENTIFIER = grant.WordCapture;
 				PRODUCT_NAME = "Word Capture";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

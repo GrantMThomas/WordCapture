@@ -102,8 +102,8 @@ class TextViewController: UIViewController, UITextViewDelegate, UIPickerViewData
     
     //Same function as flashcard homework to return
     func textViewDidChange(_ textView: UITextView) {
-        var viewString = textView.text ?? ""
-        if viewString.contains("\n") {
+        var viewString:String = textView.text ?? " "
+        if viewString.count > 0 && Array(viewString)[viewString.count - 1] == "\n" {
             let characterSet = CharacterSet(charactersIn: "\n")
             viewString = viewString.trimmingCharacters(in: characterSet)
             textView.text = viewString
