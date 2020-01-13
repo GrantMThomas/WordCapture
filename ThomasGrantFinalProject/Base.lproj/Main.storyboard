@@ -11,7 +11,7 @@
         <!--View Controller-->
         <scene sceneID="KvH-31-zCM">
             <objects>
-                <viewController id="rX9-qf-Z2u" customClass="ViewController" customModule="ThomasGrantFinalProject" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="rX9-qf-Z2u" customClass="ViewController" customModule="Word_Capture" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vah-dE-dk8">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -45,7 +45,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Take a photo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4iA-oT-Hqt">
-                                <rect key="frame" x="138" y="148" width="137" height="30"/>
+                                <rect key="frame" x="139" y="148" width="136.33333333333337" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -53,9 +53,8 @@
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="KnW-zC-IH8" firstAttribute="trailing" secondItem="4iA-oT-Hqt" secondAttribute="trailing" constant="139" id="4hD-3a-ODq"/>
                             <constraint firstItem="a6M-eg-0vb" firstAttribute="centerY" secondItem="vah-dE-dk8" secondAttribute="centerY" id="9pZ-Og-D48"/>
-                            <constraint firstItem="4iA-oT-Hqt" firstAttribute="leading" secondItem="KnW-zC-IH8" secondAttribute="leading" constant="138" id="L4R-T6-kkd"/>
+                            <constraint firstItem="4iA-oT-Hqt" firstAttribute="centerX" secondItem="vah-dE-dk8" secondAttribute="centerX" id="DZp-dr-ENK"/>
                             <constraint firstItem="a6M-eg-0vb" firstAttribute="centerX" secondItem="vah-dE-dk8" secondAttribute="centerX" id="XlC-MW-j9o"/>
                             <constraint firstItem="1ao-8U-WKc" firstAttribute="top" secondItem="a6M-eg-0vb" secondAttribute="bottom" constant="8" id="fQ8-gK-kTQ"/>
                             <constraint firstItem="XMb-e9-QO9" firstAttribute="centerX" secondItem="vah-dE-dk8" secondAttribute="centerX" id="fzx-aj-uic"/>
@@ -80,7 +79,7 @@
         <!--Table View Controller-->
         <scene sceneID="mjZ-r6-dGY">
             <objects>
-                <tableViewController id="ep1-v4-WfM" customClass="TableViewController" customModule="ThomasGrantFinalProject" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="ep1-v4-WfM" customClass="TableViewController" customModule="Word_Capture" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="x3e-O7-P6M">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -109,7 +108,7 @@
         <!--Text View Controller-->
         <scene sceneID="2WQ-mm-4i1">
             <objects>
-                <viewController storyboardIdentifier="TextView" id="Yqv-ZW-4kJ" customClass="TextViewController" customModule="ThomasGrantFinalProject" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TextView" id="Yqv-ZW-4kJ" customClass="TextViewController" customModule="Word_Capture" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tWs-1z-xFT">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
