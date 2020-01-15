@@ -50,11 +50,21 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G43-zT-FqD" customClass="GADBannerView">
+                                <rect key="frame" x="47" y="0.0" width="320" height="50"/>
+                                <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="320" id="2ab-Zu-mKD"/>
+                                    <constraint firstAttribute="height" constant="50" id="RFZ-n9-18p"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="a6M-eg-0vb" firstAttribute="centerY" secondItem="vah-dE-dk8" secondAttribute="centerY" id="9pZ-Og-D48"/>
                             <constraint firstItem="4iA-oT-Hqt" firstAttribute="centerX" secondItem="vah-dE-dk8" secondAttribute="centerX" id="DZp-dr-ENK"/>
+                            <constraint firstItem="G43-zT-FqD" firstAttribute="centerX" secondItem="vah-dE-dk8" secondAttribute="centerX" id="EC4-N8-R0L"/>
+                            <constraint firstItem="G43-zT-FqD" firstAttribute="top" secondItem="KnW-zC-IH8" secondAttribute="top" id="Mf4-do-2xz"/>
                             <constraint firstItem="a6M-eg-0vb" firstAttribute="centerX" secondItem="vah-dE-dk8" secondAttribute="centerX" id="XlC-MW-j9o"/>
                             <constraint firstItem="1ao-8U-WKc" firstAttribute="top" secondItem="a6M-eg-0vb" secondAttribute="bottom" constant="8" id="fQ8-gK-kTQ"/>
                             <constraint firstItem="XMb-e9-QO9" firstAttribute="centerX" secondItem="vah-dE-dk8" secondAttribute="centerX" id="fzx-aj-uic"/>
@@ -68,13 +78,14 @@
                         <inset key="largeContentSizeImageInsets" minX="0.0" minY="1" maxX="0.0" maxY="1"/>
                     </tabBarItem>
                     <connections>
+                        <outlet property="bannerView" destination="G43-zT-FqD" id="t0o-PW-yjb"/>
                         <outlet property="cameraButton" destination="XMb-e9-QO9" id="LMw-Ya-837"/>
                         <outlet property="photoButton" destination="1ao-8U-WKc" id="OUv-qs-dSd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v2k-gl-wUB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-180" y="-524"/>
+            <point key="canvasLocation" x="-181.15942028985509" y="-524.18478260869574"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="mjZ-r6-dGY">
@@ -158,7 +169,7 @@
                                     <fragment content="Text">
                                         <attributes>
                                             <color key="NSColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <font key="NSFont" metaFont="system" size="14"/>
+                                            <font key="NSFont" metaFont="menu" size="14"/>
                                         </attributes>
                                     </fragment>
                                 </attributedString>

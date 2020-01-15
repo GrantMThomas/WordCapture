@@ -38,8 +38,10 @@ class TextViewController: UIViewController, UITextViewDelegate, UIPickerViewData
     @IBAction func sharePressed(_ sender: Any) {
         let words = [textView.text ?? "NA"]
         let activityViewController = UIActivityViewController(activityItems: words as [String], applicationActivities: nil)
-        activityViewController.popoverPresentationController?.sourceView = self.view
+        activityViewController.popoverPresentationController?.sourceView = self.stepper
+
         self.present(activityViewController, animated: true, completion: nil)
+        
     }
     
     @IBAction func fontButtonPressed(_ sender: Any) {

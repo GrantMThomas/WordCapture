@@ -8,14 +8,17 @@
 
 import UIKit
 import CropViewController
+import GoogleMobileAds
 
-class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, CropViewControllerDelegate {
+class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, CropViewControllerDelegate, GADBannerViewDelegate {
     
     let model = Model.shared
     var ip:UIImagePickerController!
     
     @IBOutlet weak var cameraButton: UIButton!
     @IBOutlet weak var photoButton: UIButton!
+    @IBOutlet weak var bannerView: GADBannerView!
+    
     
     @IBAction func cameraButtonPressed(_ sender: Any) {
         
@@ -55,6 +58,13 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        bannerView.adUnitID = "ca-app-pub-7169101247679253/8212760615"
+        bannerView.rootViewController = self
+        bannerView.delegate = self
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        bannerView.load(GADRequest())
     }
     
     
@@ -90,7 +100,16 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     //Actual callback that is used 
     func addToModel(_ input: String, _ image: UIImage){
+        //Add to model
         model.addImage(image: image, text: input)
+        
+        //Open in storyboard
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        let textView = sb.instantiateViewController(withIdentifier: "TextView") as! TextViewController
+        textView.text = model.getLastImage()?.text ?? "NA"
+        textView.index = max(0, model.getSize() - 1)
+        textView.modalPresentationStyle = .fullScreen
+        self.present(textView, animated: true, completion: nil)
     }
     
 

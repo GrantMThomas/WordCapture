@@ -95,6 +95,17 @@ class Model {
         }
     }
     
+    func getLastImage()->imageText?{
+        if items.count > 0{
+            return items[items.count - 1]
+        }
+        return nil
+    }
+    
+    func getSize()->Int{
+        return items.count
+    }
+    
     //Save to array, just saves key and text
     private func save(){
         var itemsArray = [[String:String]]()
